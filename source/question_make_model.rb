@@ -20,8 +20,8 @@ class QuestionMaker
     # if answer == @deck[@index][1]
       @index +=1
       if @deck.length - 1 >= @index
-        give_question(@index)
         puts "Correct! Next question:"
+        give_question(@index)
       else
         puts "You have answered all questions"
       end
