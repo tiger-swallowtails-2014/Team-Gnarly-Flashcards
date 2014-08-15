@@ -9,10 +9,11 @@ class QuestionMaker
   end
 
   def give_question(index)
+    puts "Question #{index + 1}:"
     puts  "#{@deck[@index].question}"
     # puts "#{@deck[@index][0]}"
-    answer = gets.chomp
-    matched?(answer)
+    answer = gets.chomp.downcase
+    matched?(answer) if answer != 'quit'
   end
 
   def matched?(answer)
@@ -20,12 +21,15 @@ class QuestionMaker
     # if answer == @deck[@index][1]
       @index +=1
       if @deck.length - 1 >= @index
-        puts "Correct! Next question:"
+        print "\e[2J"; print "\e[H"; puts "Correct! Next question:"
+        puts
         give_question(@index)
       else
         puts "You have answered all questions"
       end
     else
+      print "\e[2J"; print "\e[H"; puts "Incorrect! Try again."
+      puts
       give_question(@index)
     end
   end
