@@ -13,7 +13,11 @@ class GameInterface
   end
 
   def self.menu
-    puts "Welcome! Type play to start."
-    puts "Type 'instructions' for more options."
+    puts "Welcome!"
+    puts "How to play:"
+    puts "type 'show hint' to get a hint"
+    puts "type 'show answer' to get the answer"
+    puts "type 'quit' to quit"
+    puts "type 'play' when you're ready to play!"
   end
 end
